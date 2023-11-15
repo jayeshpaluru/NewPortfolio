@@ -3,12 +3,18 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 interface Repo {
+  languages: string[];
   languages_url: string;
-  [key: string]: any;  
+  stargazers_count: number;
+  html_url: string;
+  id: number;
+  name: string;
+  description: string;
+  [key: string]: any;  // for other properties that you don't use directly
 }
 
 export default function Projects() {
-  const [repos, setRepos] = useState<{ languages: string[]; languages_url: string; }[]>([]);
+  const [repos, setRepos] = useState<Repo[]>([]);
 
   useEffect(() => {
     const fetchRepos = async () => {
