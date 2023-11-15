@@ -2,13 +2,18 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
+interface Repo {
+  languages_url: string;
+  [key: string]: any;  // for other properties that you don't use directly
+}
+
 export default function Projects() {
   const [repos, setRepos] = useState([]);
 
   useEffect(() => {
     const fetchRepos = async () => {
-      const { data } = await axios.get('https://api.github.com/users/jayeshpaluru/repos');
-      const reposWithLanguages = await Promise.all(data.map(async (repo) => {
+      const { data } = await axios.get<Repo[]>('https://api.github.com/users/jayeshpaluru/repos');
+      const reposWithLanguages = await Promise.all(data.map(async (repo: Repo) => {
         const { data: languages } = await axios.get(repo.languages_url);
         return { ...repo, languages: Object.keys(languages) };
       }));
