@@ -10,7 +10,7 @@ interface Repo {
   id: number;
   name: string;
   description: string;
-  [key: string]: any;  // for other properties that you don't use directly
+  [key: string]: any; 
 }
 
 export default function Projects() {
