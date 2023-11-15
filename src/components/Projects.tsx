@@ -42,8 +42,7 @@ export default function Projects() {
             <p>Stars: {repo.stargazers_count}</p>
             {repo.languages.length > 0 && (
               <div>
-                Languages: 
-                {repo.languages.join(', ')}
+                Languages: {repo.languages.join(', ')}
               </div>
             )}
           </a>
