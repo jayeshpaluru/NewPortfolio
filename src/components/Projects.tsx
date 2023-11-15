@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 
 interface Repo {
   languages_url: string;
-  [key: string]: any;  // for other properties that you don't use directly
+  [key: string]: any;  
 }
 
 export default function Projects() {
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = useState<{ languages: string[]; languages_url: string; }[]>([]);
 
   useEffect(() => {
     const fetchRepos = async () => {
