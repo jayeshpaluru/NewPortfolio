@@ -9,15 +9,8 @@ export default function About() {
       </h2>
       <div className="flex flex-col items-start justify-center h-full">
         <p className=" sm:px-12 py-5">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
-          deleniti provident, nesciunt voluptate temporibus, deserunt iure
-          cumque hic ab maiores, non nulla repellendus possimus odio aliquid
-          ipsa obcaecati ex soluta.
-          <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint dolor
-          rem excepturi, est rerum itaque velit dignissimos deleniti facilis eos
-          non, nulla aut corrupti assumenda provident laborum voluptas sed
-          eligendi?
+          I am a sophomore at the University of Texas at Dallas pursuing a BS in Data Science.
+          I am currently working as a Data Science Intern at Humana. I am passionate about Data Science, Machine Learning, and Artificial Intelligence.
         </p>
       </div>
     </section>

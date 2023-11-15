@@ -6,8 +6,8 @@ import './globals.css';
 const robotoMono = Roboto_Mono({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Dynamic island ',
-  description: 'created by spacecode',
+  title: 'Jayesh Paluru',
+  description: 'My personal portfolio inspider by the dynamic island template by spacecode',
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" sizes="any" />
       </head>
-      <body className={robotoMono.className}>{children}</body>
+      <body className={`${robotoMono.className} bg-gradient-radial from-secondary via-green-400 to-accent`}>{children}</body>
     </html>
   );
 }

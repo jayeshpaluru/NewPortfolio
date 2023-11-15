@@ -4,25 +4,37 @@ import Image from 'next/image';
 import { Button } from './ui/button';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Navbar() {
   const [showNav, setShowNav] = useState<boolean>(false);
   const [hidden, setHidden] = useState(false);
+  const [userNavigated, setUserNavigated] = useState(false); // new state variable
 
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     const previous = scrollY.getPrevious();
 
-    if (latest > previous && latest > 150) {
-      setHidden(true);
-      setShowNav(false);
-    } else {
-      setHidden(false);
+    if (!userNavigated) { // check if userNavigated is false
+      if (latest > previous && latest > 150) {
+        setHidden(true);
+        setShowNav(false);
+      } else {
+        setHidden(false);
+      }
     }
   });
+
+  // reset userNavigated to false after a delay
+  useEffect(() => {
+    if (userNavigated) {
+      setTimeout(() => {
+        setUserNavigated(false);
+      }, 1000);
+    }
+  }, [userNavigated]);
 
   return (
     <motion.nav
@@ -81,13 +93,13 @@ export default function Navbar() {
         ]}
       >
         <li>
-          <Link href={'#about'}>{'//About'}</Link>
+          <Link href={'#about'} onClick={() => setUserNavigated(true)}>{'//About'}</Link>
         </li>
         <li>
-          <Link href={'#skills'}>{'//Skills'}</Link>
+          <Link href={'#skills'} onClick={() => setUserNavigated(true)}>{'//Skills'}</Link>
         </li>
         <li>
-          <Link href={'#projects'}>{'//Projects'}</Link>
+          <Link href={'#projects'} onClick={() => setUserNavigated(true)}>{'//Projects'}</Link>
         </li>
       </motion.ul>
 
@@ -106,9 +118,11 @@ export default function Navbar() {
         initial="hidden"
         animate={hidden ? 'visible' : 'hidden'}
       >
-        <Button variant={'accent'} className="w-full">
-          Contact
-        </Button>
+        <a href="mailto:jayeshpaluru@gmail.com">
+          <Button variant={'accent'} className="w-full">
+            Contact
+          </Button>
+        </a>
       </motion.div>
 
       <Button

@@ -10,8 +10,7 @@ export default function Skills() {
 
       <div>
         <div className="flex items-center font-medium sm:text-lg justify-center flex-wrap py-10">
-          <h5 className="px-1.5 ">Tech Stack</h5>|
-          <h5 className="px-1.5">Design</h5>
+          <h5 className="px-1.5 ">Technology</h5>
         </div>
 
         <article className="flex flex-col gap-5 px-5">
@@ -19,13 +18,13 @@ export default function Skills() {
             <Badge variant={'secondary'}>HTML</Badge>
             <Badge variant={'secondary'}>CSS</Badge>
             <Badge variant={'secondary'}>Javascript</Badge>
-            <Badge variant={'secondary'}>Tailwind</Badge>
-            <Badge variant={'secondary'}>Typescript</Badge>
-            <Badge variant={'secondary'}>React</Badge>
-            <Badge variant={'secondary'}>Next.js</Badge>
-            <Badge variant={'secondary'}>Figma</Badge>
-            <Badge variant={'secondary'}>Shadcn UI</Badge>
-            <Badge variant={'secondary'}>MUI</Badge>
+            <Badge variant={'secondary'}>Python</Badge>
+            <Badge variant={'secondary'}>SQL</Badge>
+            <Badge variant={'secondary'}>R</Badge>
+            <Badge variant={'secondary'}>Data Analysis</Badge>
+            <Badge variant={'secondary'}>Data Science</Badge>
+            <Badge variant={'secondary'}>Machine Learning</Badge>
+            <Badge variant={'secondary'}>AI</Badge>
           </div>
           <hr />
           <div className="flex items-center font-bold sm:text-lg justify-center flex-wrap ">
@@ -35,6 +34,7 @@ export default function Skills() {
             <Badge variant={'secondary'}>Communication</Badge>
             <Badge variant={'secondary'}>Deep Work</Badge>
             <Badge variant={'secondary'}>Time-management</Badge>
+            <Badge variant={'secondary'}>Leadership</Badge>
           </div>
         </article>
       </div>
